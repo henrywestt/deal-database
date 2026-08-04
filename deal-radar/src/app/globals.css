@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #ffffff;
+  --ground: #f6f6f4;
+  --ink: #16181d;
+  --ink-soft: #4a4d55;
+  --ink-mute: #83868e;
+  --rule: #e3e3df;
+  --rule-soft: #eeeeea;
+  --score: #24457a;
+  --score-ghost: #c9d3e3;
+  --confirmed: #1c6a4c;
+  --confirmed-bg: #e6f2ec;
+  --estimated: #92620f;
+  --estimated-bg: #f8efdd;
+  --neutral-bg: #efefec;
+}
+
+@theme inline {
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, "SF Mono", monospace;
+}
+
+html {
+  background: var(--ground);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.num {
+  font-family: var(--font-mono-face), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono-face), ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.row-link:hover .row-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.row-link:focus-visible {
+  outline: 2px solid var(--score);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--score);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
